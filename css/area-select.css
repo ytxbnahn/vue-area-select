@@ -1,0 +1,75 @@
+.area-mask{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background: #000;
+    opacity: .7;
+    display: none;
+}
+.mask_active{
+    z-index: 99;
+    display: block;
+}
+.area-contain{
+    display: none;
+    background-color: #fff;
+}
+.area_contain_active{
+    z-index: 100;
+    display: block;
+    height: 5rem;
+    width: 100%;
+    position: fixed;
+    top: auto;
+    left: 0px;
+    bottom: 0px;
+}
+.area-header{
+    height: 0.8rem;
+    line-height: 0.8rem;
+    text-align: center;
+    font-size: 0.35rem;
+}
+.area-close{
+    position: absolute;
+    right: 0.3rem;
+}
+.area-top{
+    height: 0.8rem;
+    line-height: 0.8rem;
+
+}
+.area-top-item{
+    display: inline-block;
+    font-size: 0.33rem;
+    padding: 0rem 0.1rem;
+    max-width: 2.45rem;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.area_top_active{
+    color: #26a2ff;
+    border-bottom: 1px solid #26a2ff;
+}
+.area-data{
+    height: 3.4rem;
+    overflow: auto;
+}
+.area-data-item{
+    height: 0.7rem;
+    line-height: 0.7rem;
+    padding: 0rem 0.2rem;
+    font-size: 0.3rem;
+}
+.red{
+    color: #26a2ff;
+}
+.fade-enter-active, .fade-leave-active {
+    transition: height .2s
+}
+.fade-enter, .fade-leave-active {
+    height: 0
+}
