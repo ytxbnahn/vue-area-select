@@ -40,15 +40,16 @@ Vue.component('area-select', {
                 '</transition>' +
     '</div>',
     methods: {
-        select: function () {
-            window.ADDRESS = this.CheckArea;
-            this.$emit('areashow',this.CheckArea)
+        select: function () { // 关闭选择器 广播事件
+            this.$emit('areashow',this.CheckArea) // 广播关闭选择器
+			 var data = this.CheckArea.province + this.CheckArea.city + this.CheckArea.region;
+            this.$emit('update:area', data) // 更新选择的地址
 
         },
-        selectArea: function (it) {
-            this.areaStatus = it;
+        selectArea: function (it) { // 高亮 省 市 区 其中一个
+            this.areaStatus = it; 
         },
-        checkProvOne: function (it,name) {
+        checkProvOne: function (it,name) { // 选择省份
             this.checkProvince = it;
             this.CheckArea.province = name;
             this.CheckArea.city = this.data[it].child[0].name;
@@ -59,7 +60,7 @@ Vue.component('area-select', {
             this.checkRegion = 0,
             this.areaStatus =2 ;
         },
-        checkCityOne: function (it,name,its) {
+        checkCityOne: function (it,name,its) { // 选择市区
             this.checkCity = it;
             this.CheckArea.province = this.data[its].name;
             this.CheckArea.city = name;
@@ -70,7 +71,7 @@ Vue.component('area-select', {
             this.areaStatus =3 ;
 
         },
-        checkRegionOne: function (it,name) {
+        checkRegionOne: function (it,name) { // 选择区
             this.CheckArea.province = this.data[this.checkProvince].name;
             this.CheckArea.city = this.data[this.checkProvince].child[this.checkCity].name;
             this.checkRegion = it

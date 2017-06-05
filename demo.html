@@ -40,8 +40,9 @@
 </head>
 <body>
     <div id="app">
-        <button style="margin: auto" @click="demo">地址</button>
-        <area-select :data="areaList" :status="areaSelect" @areashow="maskStatus" :class="{'none':!areaSelect}"></area-select>
+        <button style="margin: auto" @click="maskStatus">地址</button>
+		<input v-model="areaStatus">
+        <area-select :data="areaList" :status="areaSelect" @areashow="maskStatus" :class="{'none':!areaSelect}" :area = 'areaStatus'  @update:area="val => areaStatus = val"></area-select>
     </div>
 
 <script>
@@ -68,20 +69,17 @@
     var vm = new Vue({
         el: '#app',
         data: {
-            areaList:[],
-            areaSelect:false
+            areaList:[], // 地址数据
+            areaSelect:false, // 控制地址选择器显示
+			areaStatus: '' // 更新选择之后的地址
         },
         methods: {
-            demo: function () {
-                this.areaSelect = !this.areaSelect;
-                console.log('8888888888888')
-            },
-            maskStatus: function () {
+            maskStatus: function () { // 更改显示状态
                 this.areaSelect = !this.areaSelect;
             }
         },
         created: function () {
-            this.areaList = JSON_;
+            this.areaList = JSON_;//地址数据赋值
         }
     })
 
