@@ -1,6 +1,8 @@
 # 基于vue的三级地址选择器
 
 ------
+## 0.演示
+	调试手机模式[demo](https://htmlpreview.github.io/?https://github.com/ytxbnahn/vue-area-select/blob/master/demo.html)
 ## 1.目标实现效果
     1.点击弹出select选择框
     2.初始显示省份，点击省份显示对应的市，以此类推。
